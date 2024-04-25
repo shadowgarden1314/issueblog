@@ -1,15 +1,42 @@
 <!DOCTYPE html>
-<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<html data-color-mode="light" data-dark-theme="dark_colorblind" data-light-theme="light" lang="zh-CN">
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="//cdn.staticfile.net/Primer/21.0.7/primer.css" rel="stylesheet" />
-    <link rel="icon" href="https://images.asuna.onflashdrive.app/file/c7eba0ac45bbe39b6ff45.png"><script>
+    <link rel="icon" href="https://static.meekdai.com/favicon.svg"><script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="OpenAI 正式开放！无需登入就能免费使用 ChatGPT">
+<meta name="description" content="今早上收到最新停止，OpenAI正式开放了ChatGPT的免注册使用功能，现在你无需注册账号，
+
+打开官网就可以直接免费使用ChatGPT, 刚开始以为的愚人节，亲测确实如此，对于无法注册账户的人来说就方便多了….
+
+
+
+
+**官方直达链接：【[点击进入](https://chat.openai.com/)】 注意：大陆用户需要挂梯子才能访问**
+
+
+
+OpenAI 声称，我们的核心使命是推动 ChatGPT 等工具的广泛应用，让人们享受人工智能带来的好处。">
+<meta property="og:title" content="OpenAI 正式开放！无需登入就能免费使用 ChatGPT">
+<meta property="og:description" content="今早上收到最新停止，OpenAI正式开放了ChatGPT的免注册使用功能，现在你无需注册账号，
+
+打开官网就可以直接免费使用ChatGPT, 刚开始以为的愚人节，亲测确实如此，对于无法注册账户的人来说就方便多了….
+
+
+
+
+**官方直达链接：【[点击进入](https://chat.openai.com/)】 注意：大陆用户需要挂梯子才能访问**
+
+
+
+OpenAI 声称，我们的核心使命是推动 ChatGPT 等工具的广泛应用，让人们享受人工智能带来的好处。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://blog.meekdai.com/post/OpenAI%20-zheng-shi-kai-fang-%EF%BC%81-wu-xu-deng-ru-jiu-neng-mian-fei-shi-yong-%20ChatGPT.html">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg">
 <title>OpenAI 正式开放！无需登入就能免费使用 ChatGPT</title>
 
 
@@ -43,7 +70,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="header">
 <h1 class="postTitle">OpenAI 正式开放！无需登入就能免费使用 ChatGPT</h1>
 <div class="title-right">
-    <a href="https://shadowgarden1314.github.io/issueblog" id="buttonHome" class="btn btn-invisible circle" title="首页">
+    <a href="https://blog.meekdai.com" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
             <path id="pathHome" fill-rule="evenodd"></path>
         </svg>
@@ -72,23 +99,23 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>对于未注册用户，OpenAI 提供了选择，让他们决定是否愿意共享自己的数据。默认情况下，用户的对话等数据将用于模型训练，但用户可以在设置中禁用数据共享。然而，由于 ChatGPT 无法在未登录状态下记住设置，用户可能需要每次都检查数据共享选项。为了解决这个问题，用户可以注册账号并进行相关设置，这样系统就能记住用户的选择。</p>
 <p>考虑到免注册使用的可能性，一些开发者可能会尝试直接使用 GPT-3.5 模型。为防止滥用，OpenAI 已经采取了一系列防护措施。</p>
 <p>最后，即使是儿童也可以在免注册情况下使用 ChatGPT，但这可能会引发一些国家或地区的监管争议。因此，ChatGPT 正在引入额外的内容保护措施，以防止滥用和违规生成的发生。</p></div>
-<div style="font-size:small;margin-top:8px;float:right;"></div>
+<div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>
 </div>
-    <div id="footer">Copyright © <span id="year"></span><a href="https://shadowgarden1314.github.io/issueblog"> 坦克还不削 </a>
-<p>
+    <div id="footer">Copyright © <span id="year"></span><a href="https://blog.meekdai.com"> Meekdai </a>
+<p><a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备20023628号</a>
 <span id="runday"></span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a>
 </p>
 
 <script>
-if(""!=""){
+if("02/16/2015"!=""){
     var now=new Date();
-    var startSite=new Date("");
+    var startSite=new Date("02/16/2015");
     var diff=now.getTime()-startSite.getTime();
     var diffDay=Math.floor(diff/(1000*60*60*24));
     document.getElementById("year").innerHTML=now.getFullYear();
-    if(""!=""){document.getElementById("runday").innerHTML=" • "+"网站运行"+diffDay+"天"+" • ";}
+    if("浙ICP备20023628号"!=""){document.getElementById("runday").innerHTML=" • "+"网站运行"+diffDay+"天"+" • ";}
     else{document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";}
 }
 </script>
@@ -123,7 +150,7 @@ function utterancesTheme(theme){
     iframe.contentWindow.postMessage(message,'https://utteranc.es');
 }
 if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
-console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n\n","padding:5px 0;background:#02d81d;color:#fff");
+console.log("\n %c Gmeek main https://github.com/Meekdai/Gmeek \n\n","padding:5px 0;background:#02d81d;color:#fff");
 </script>
 
 <script>
