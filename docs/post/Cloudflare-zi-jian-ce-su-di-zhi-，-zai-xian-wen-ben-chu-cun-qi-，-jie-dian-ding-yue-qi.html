@@ -65,49 +65,41 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>部署 Cloudflare Pages在线测速：</p>
-<ul>
-<li>在 Cloudflare Pages 控制台中创建一个新的 Pages容器。</li>
-<li>将 [<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-SpeedTestURL-main.zip">CF-Workers-SpeedTestURL-main.zip</a>](<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-SpeedTestURL-main.zip)%C2%A0%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%B8%8A%E4%BC%A0%E5%88%B0%E8%AF%A5%E5%AE%B9%E5%99%A8%E4%B8%AD%E3%80%82">https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-SpeedTestURL-main.zip) 下载并上传到该容器中。</a></li>
-<li>上传完成后就完成了自建测速地址，Cloudflare Pages容器域名地址就是测速地址；</li>
-<li>可下载[<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/Speed-tloos-main.zip">Speed-tloos-main.zip</a>](<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/Speed-tloos-main.zip)%C2%A0%E5%B9%B6%E5%B0%86%E5%85%B6%E8%A7%A3%E5%8E%8B%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%94%B5%E8%84%91%E4%B8%AD%EF%BC%8C%E4%BF%AE%E6%94%B9%E6%B5%8B%E9%80%9F%E4%BB%A3%E7%A0%81%E4%B8%AD%E7%9A%84-url">https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/Speed-tloos-main.zip) 并将其解压到本地电脑中，修改测速代码中的-url</a> https：//选项为自己搭建的测速地址。</li>
-</ul>
-<p><strong>测速代码：</strong></p>
-<ul>
-<li>CloudflareST.exe -tp 443 -f ip.txt -n 200 -dn 10 -sl 5 -url <strong>https：//</strong></li>
-<li>tp 443 指定测速端口可改为上方可选端口</li>
-<li>f ip.txt 这是文件里的那个ip库，用来测速的，你自己有ip库可替换，无就不用管</li>
-<li>n 200 延迟测速线程；越多延迟测速越快，性能弱的设备，请勿太高；(默认 200 最多 1000)</li>
-<li>dn 10 下载测速时间；单个 IP 下载测速最长时间，不能太短；(默认 10 秒)</li>
-<li>sl 5 下载速度下限；只输出高于指定下载速度的 IP。</li>
-</ul>
-<p><strong>2. 部署在线文本储存器：</strong></p>
-<ul>
-<li>在 Cloudflare Wokers和Pages 控制台中创建一个KV空间容器后返回Cloudflare Wokers和Pages 控制台。</li>
-<li>在Cloudflare Pages 控制台中创建一个新的 Pages容器，将 [<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-TEXT2KV-main.zip">CF-Workers-TEXT2KV-main.zip</a>](<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-TEXT2KV-main.zip)%C2%A0%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%B8%8A%E4%BC%A0%E5%88%B0%E8%AF%A5%E5%AE%B9%E5%99%A8%E4%B8%AD%E3%80%82">https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-TEXT2KV-main.zip) 下载并上传到该容器中。</a></li>
-<li>上传完成后需到该容器设置/函数中绑定前面创建的KV容器；</li>
-<li>绑定KV容器后在创建的Pages容器中选择设置/环境变量添加以下变量：</li>
-<li>变量名称：TOKEN</li>
-<li>值：访问在线文本储存器的密码</li>
-<li>变量添加完成后再次回到该项目部署页面，再次上传该资产文件 [<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-TEXT2KV-main.zip">CF-Workers-TEXT2KV-main.zip</a>](<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-TEXT2KV-main.zip">https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-TEXT2KV-main.zip</a>)</li>
-</ul>
-<p><strong>3. 部署节点订阅器：</strong></p>
-<ul>
-<li>在 Cloudflare Wokers和Pages 控制台中创建一个Wokers容器。</li>
-<li>删除Wokers原有代码，将 [<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/_worker.js">_worker.js</a>](<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/_worker.js)%C2%A0%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E7%B2%98%E8%B4%B4%E5%88%B0%E8%AF%A5%E5%AE%B9%E5%99%A8%E5%86%85%E5%B9%B6%E9%83%A8%E7%BD%B2%E3%80%82">https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/_worker.js) 中的代码粘贴到该容器内并部署。</a></li>
-<li>部署完成后需到该容器设置/变量中添加以下变量；</li>
-<li>变量名称：HOST</li>
-<li>值：之前通过Pages搭建的订阅的域名；</li>
-<li>变量名称：UUID</li>
-<li>值：之前通过Pages搭建的订阅时所使用的UUID；</li>
-<li>变量名称：PATH</li>
-<li>值：之前通过Pages搭建的订阅时所使用的PATH；</li>
-</ul>
-<p><strong>※  搭建测速上传Cloudflare Pages 资产下载：[<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-SpeedTestURL-main.zip">点击下载</a>](<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-SpeedTestURL-main.zip">https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-SpeedTestURL-main.zip</a>)</strong></p>
-<p><strong>※  本地测速压缩包下载：[<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/Speed-tloos-main.zip">点击下载</a>](<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/Speed-tloos-main.zip">https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/Speed-tloos-main.zip</a>)</strong></p>
-<p><strong>※  搭建在线文本储存器资产下载：[<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-TEXT2KV-main.zip">点击下载</a>](<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-TEXT2KV-main.zip">https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-TEXT2KV-main.zip</a>)</strong></p>
-<p><strong>※  搭建节点订阅器代码：[<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/_worker.js">点击进入</a>](<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/_worker.js">https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/_worker.js</a>)</strong></p>
-<p><strong>※  本期视频演示教学：<a href="https://youtu.be/4U6N2DeZC4k" rel="nofollow">https://youtu.be/4U6N2DeZC4k</a></strong></p></div>
+<div class="markdown-body" id="postBody"><p><strong>1.部署 Cloudflare Pages在线测速：</strong></p>
+<p>在 Cloudflare Pages 控制台中创建一个新的 Pages容器。<br>
+将 <a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-SpeedTestURL-main.zip">CF-Workers-SpeedTestURL-main.zip</a> 下载并上传到该容器中。<br>
+上传完成后就完成了自建测速地址，Cloudflare Pages容器域名地址就是测速地址；<br>
+可下载<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/Speed-tloos-main.zip">Speed-tloos-main.zip</a> 并将其解压到本地电脑中，修改测速代码中的-url https：//选项为自己搭建的测速地址。<br>
+测速代码：</p>
+<p>CloudflareST.exe -tp 443 -f ip.txt -n 200 -dn 10 -sl 5 -url https：//<br>
+-tp 443 指定测速端口可改为上方可选端口<br>
+-f ip.txt 这是文件里的那个ip库，用来测速的，你自己有ip库可替换，无就不用管<br>
+-n 200 延迟测速线程；越多延迟测速越快，性能弱的设备，请勿太高；(默认 200 最多 1000)<br>
+-dn 10 下载测速时间；单个 IP 下载测速最长时间，不能太短；(默认 10 秒)<br>
+-sl 5 下载速度下限；只输出高于指定下载速度的 IP。</p>
+<p><strong>2. 部署在线文本储存器：</strong><br>
+在 Cloudflare Wokers和Pages 控制台中创建一个KV空间容器后返回Cloudflare Wokers和Pages 控制台。</p>
+<p>在Cloudflare Pages 控制台中创建一个新的 Pages容器，将 <a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-TEXT2KV-main.zip">CF-Workers-TEXT2KV-main.zip</a> 下载并上传到该容器中。</p>
+<p>上传完成后需到该容器设置/函数中绑定前面创建的KV容器；</p>
+<p>绑定KV容器后在创建的Pages容器中选择设置/环境变量添加以下变量：</p>
+<p>变量名称：TOKEN</p>
+<p>值：访问在线文本储存器的密码</p>
+<p>变量添加完成后再次回到该项目部署页面，再次上传该资产文件 <a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-TEXT2KV-main.zip">CF-Workers-TEXT2KV-main.zip</a></p>
+<p><strong>3. 部署节点订阅器：</strong><br>
+在 Cloudflare Wokers和Pages 控制台中创建一个Wokers容器。</p>
+<p>删除Wokers原有代码，将 <a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/_worker.js">_worker.js</a> 中的代码粘贴到该容器内并部署。</p>
+<p>部署完成后需到该容器设置/变量中添加以下变量；</p>
+<p>变量名称：HOST</p>
+<p>值：之前通过Pages搭建的订阅的域名；</p>
+<p>变量名称：UUID</p>
+<p>值：之前通过Pages搭建的订阅时所使用的UUID；</p>
+<p>变量名称：PATH</p>
+<p>值：之前通过Pages搭建的订阅时所使用的PATH；</p>
+<p>※  搭建测速上传Cloudflare Pages 资产下载：<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-SpeedTestURL-main.zip">点击下载</a></p>
+<p>※  本地测速压缩包下载：<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/Speed-tloos-main.zip">点击下载</a></p>
+<p>※  搭建在线文本储存器资产下载：<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/CF-Workers-TEXT2KV-main.zip">点击下载</a></p>
+<p>※  搭建节点订阅器代码：<a href="https://github.com/Onezyh/SpeedST-Vless-TXT-USB/blob/mian/_worker.js">点击进入</a></p>
+<p>※  本期视频演示教学：<a href="https://youtu.be/4U6N2DeZC4k" rel="nofollow">https://youtu.be/4U6N2DeZC4k</a></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>
