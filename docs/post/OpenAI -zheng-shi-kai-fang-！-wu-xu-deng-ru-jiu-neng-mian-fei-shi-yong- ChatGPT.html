@@ -4,7 +4,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="content-type" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="//cdn.staticfile.net/Primer/21.0.7/primer.css" rel="stylesheet" />
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
     <link rel="icon" href="https://telegraph-image-8nb.pages.dev/file/586b3de65f59f1ee27ee7.png"><script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
@@ -100,8 +100,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>考虑到免注册使用的可能性，一些开发者可能会尝试直接使用 GPT-3.5 模型。为防止滥用，OpenAI 已经采取了一系列防护措施。</p>
 <p>最后，即使是儿童也可以在免注册情况下使用 ChatGPT，但这可能会引发一些国家或地区的监管争议。因此，ChatGPT 正在引入额外的内容保护措施，以防止滥用和违规生成的发生。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;">❤️ 转载文章请注明出处，谢谢！❤️</div>
+
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>
+
 </div>
     <div id="footer">Copyright © <span id="year"></span><a href="https://issue.hellowold.dynv6.net/"> 萤麻了 </a>
 <p><a href="https://beian.miit.gov.cn/" target="_blank">2024</a>
@@ -156,6 +158,8 @@ console.log("\n %c Gmeek main https://github.com/Meekdai/Gmeek \n\n","padding:5p
 <script>
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
 
 function openComments(){
     cm=document.getElementById("comments");
